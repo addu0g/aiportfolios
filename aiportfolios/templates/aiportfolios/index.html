@@ -1,0 +1,27 @@
+<form method="post" action="iaresult"> {% csrf_token %}
+    Objective : 
+    <select name="objective" value="{{prompt_values.objective}}">
+        <option>Retirement income</option>
+        <option>Down payment</option>
+        <option>Funding education</option>
+        <option>Funding a trip</option>
+    </select>
+    <br/>
+    Age : <input name="age" value="{{prompt_values.age}}" type="number"/>
+    <br/>
+    Risk : 
+    <select name="risk" value="{{prompt_values.risk}}">
+        <option>Aggressive growth</option>
+        <option>Moderate growth</option>
+        <option>Income generation</option>
+    </select>    
+    <br/>
+    Investment horizon : 
+    <select name="horizon" value="{{prompt_values.horizon}}">
+        <option>short-term</option>
+        <option>medium-term</option>
+        <option>long-term</option>
+    </select>
+    <br/>
+    <button type="submit">Send</button>
+</form>
