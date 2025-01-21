@@ -8,4 +8,4 @@ This Django application leverages the power of Artificial Intelligence (AI) to g
 
 # Test URL
 
-[Click to test the portfolio app](http://portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net/)
+[Click to test the portfolio app](https://portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net/aiportfolios/)
