@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net']
 
-CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
