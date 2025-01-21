@@ -1,27 +1,50 @@
-<form method="post" action="iaresult"> {% csrf_token %}
-    Objective : 
-    <select name="objective" value="{{prompt_values.objective}}">
-        <option>Retirement income</option>
-        <option>Down payment</option>
-        <option>Funding education</option>
-        <option>Funding a trip</option>
-    </select>
+{% extends "../master.html" %}
+
+{% block title %}
+  Porfolio creator
+{% endblock %}
+
+{% block content %}
     <br/>
-    Age : <input name="age" value="{{prompt_values.age}}" type="number"/>
-    <br/>
-    Risk : 
-    <select name="risk" value="{{prompt_values.risk}}">
-        <option>Aggressive growth</option>
-        <option>Moderate growth</option>
-        <option>Income generation</option>
-    </select>    
-    <br/>
-    Investment horizon : 
-    <select name="horizon" value="{{prompt_values.horizon}}">
-        <option>short-term</option>
-        <option>medium-term</option>
-        <option>long-term</option>
-    </select>
-    <br/>
-    <button type="submit">Send</button>
-</form>
+    <form method="post" action="iaresult"> {% csrf_token %}
+        <label for="language" class="form-label">
+            Response in Spanish : 
+        </label>
+        <input name="language" value="{{ prompt_values.language }}" type="checkbox" class="form-check-input"/>
+        <br/>
+        <label for="objective" class="form-label">
+            Objective : 
+        </label>
+        <select name="objective" value="{{prompt_values.objective}}" class="form-control">
+            <option>Retirement income</option>
+            <option>Down payment</option>
+            <option>Funding education</option>
+            <option>Funding a trip</option>
+        </select>
+        <br/>
+        <label for="age" class="form-label">
+            Age : 
+        </label>
+        <input name="age" value="{{prompt_values.age}}" type="number" class="form-control"/>
+        <br/>
+        <label for="risk" class="form-label">
+            Risk : 
+        </label>
+        <select name="risk" value="{{prompt_values.risk}}" class="form-control">
+            <option>Aggressive growth</option>
+            <option>Moderate growth</option>
+            <option>Income generation</option>
+        </select>    
+        <br/>
+        <label for="horizon" class="form-label">
+            Investment horizon : 
+        </label>
+        <select name="horizon" value="{{prompt_values.horizon}}" class="form-control">
+            <option>Short-term</option>
+            <option>Medium-term</option>
+            <option>Long-term</option>
+        </select>
+        <br/>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+{% endblock %}
