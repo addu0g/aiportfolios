@@ -6,6 +6,7 @@
 
 {% block content %}
     <br/>
+    <i style="color:red">* are important</i>
     <form method="post" action="iaresult"> {% csrf_token %}
         <label for="language" class="form-label">
             Response in Spanish : 
@@ -23,9 +24,9 @@
         </select>
         <br/>
         <label for="age" class="form-label">
-            Age : 
+            Age <span style="color:red">(*)</span> : 
         </label>
-        <input name="age" value="{{prompt_values.age}}" type="number" class="form-control"/>
+        <input name="age" value="{{prompt_values.age}}" type="number" class="form-control" placeholder="18" required/>
         <br/>
         <label for="risk" class="form-label">
             Risk : 
