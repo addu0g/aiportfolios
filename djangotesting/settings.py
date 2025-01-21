@@ -25,9 +25,15 @@ SECRET_KEY = 'django-insecure-m8xf5t$#ammyp^w=9dv51d*lwot6ac1!ih5uut^e**pg-^r%il
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net']
+
 CSRF_TRUSTED_ORIGINS = ['https://portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net']
-CORS_ORIGIN_ALLOW_ALL = True
+
+ALLOWED_HOSTS = ['portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net']
+
+CORS_ORIGIN_WHITELIST = [
+    'https://portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net,'
+]
+
 
 # Application definition
 
