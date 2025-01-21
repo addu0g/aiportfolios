@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['portfoliohelper-hnbec4ewh9dnanbg.canadaeast-01.azurewebsites.net']
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'aiportfolios',
     'bootstrap5',
 ]
@@ -44,7 +46,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     # CORS
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

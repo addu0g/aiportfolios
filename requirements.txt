@@ -1,4 +1,5 @@
 markdown
 django
+django-cors-headers
 django-bootstrap-v5
 google-generativeai
