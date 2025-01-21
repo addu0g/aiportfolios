@@ -1,3 +1,4 @@
 markdown
 django
+bootstrap5
 google-generativeai
