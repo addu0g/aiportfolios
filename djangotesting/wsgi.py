@@ -12,5 +12,5 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangotesting.settings')
-os.environ["GOOGLE_API_KEY"] =''
+
 application = get_wsgi_application()
