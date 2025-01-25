@@ -8,6 +8,11 @@
     <br/>
     <i style="color:red">* are important</i>
     <form method="post" action="iaresult"> {% csrf_token %}
+        <label for="ammount" class="form-label">
+            Ammount : 
+        </label>
+        <input name="ammount" value="{{ prompt_values.ammount }}" type="number" class="form-control" required/>
+        <br/>        
         <label for="language" class="form-label">
             Response in Spanish : 
         </label>
