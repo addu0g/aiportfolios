@@ -5,13 +5,100 @@
 {% endblock %}
 
 {% block content %}
+    <script type="text/javascript">
+        window.onload = () => {
+            langChange();
+        }
+        var lang = false;
+        function langChange(){
+            var sp = "<p>"+
+                "Paso 1: Complete el monto Busque el campo denominado 'Monto'."+
+                "Ingrese el monto de dinero que desea invertir."+
+                "</p><p>"+
+                "Paso 2: Seleccione el idioma (opcional) Si prefiere una respuesta en español, marque la casilla junto a 'Respuesta en español'."+
+                "</p><p>"+
+                "Paso 3: Especifique el objetivo En el campo 'Objetivo', indique su meta de inversión. En el ejemplo, el objetivo es 'Ingresos de jubilación'. Puede personalizarlo para que coincida con sus propias metas (por ejemplo, 'Pago inicial', 'Fondo de emergencia', 'Educación')."+
+                "</p><p>"+
+                "Paso 4: Ingrese la edad En el campo 'Edad', ingrese su edad actual."+
+                "</p><p>"+
+                "Paso 5: Elija la tolerancia al riesgo Seleccione su nivel de tolerancia al riesgo de las opciones proporcionadas. En el ejemplo, se seleccionó 'Crecimiento agresivo'. Ajústelo según su nivel de comodidad con las posibles pérdidas de inversión."+
+                "</p><p>"+
+                "Paso 6: Defina el horizonte de inversión Especifique su horizonte de inversión. En el ejemplo, se seleccionó 'Corto plazo'. Elija el período de tiempo en el que planea invertir su dinero."+
+                "</p><p>"+
+                "Paso 7: Haga clic en 'Enviar' Una vez que haya completado toda la información requerida, haga clic en el botón 'Enviar' para enviar su solicitud."+
+                "</p>";
+            var en = "<p>"+
+                "Step 1: Fill in the Amount"+
+                "Locate the field labeled 'Amount'."+
+                "</p><p>"+
+                "Enter the amount of money you wish to invest."+
+                "</p><p>"+
+                "Step 2: Select Language (Optional)"+
+                "If you prefer a response in Spanish, check the box next to 'Response in Spanish'."+
+                "</p><p>"+
+                "Step 3: Specify Objective"+
+                "In the 'Objective' field, state your investment goal."+
+                "In the example, the objective is 'Retirement income'."+
+                "You can customize this to match your own goals (e.g., 'Down payment', 'Emergency fund', 'Education')."+
+                "</p><p>"+
+                "Step 4: Enter Age"+
+                "In the 'Age' field, enter your current age."+
+                "</p><p>"+
+                "Step 5: Choose Risk Tolerance"+
+                "Select your risk tolerance level from the options provided."+
+                "In the example, 'Aggressive growth' is selected."+
+                "Adjust this based on your comfort level with potential investment losses."+
+                "</p><p>"+
+                "Step 6: Define Investment Horizon"+
+                "Specify your investment horizon."+
+                "In the example, 'Short-term' is selected."+
+                "Choose the timeframe for which you plan to invest your money."+
+                "</p><p>"+
+                "Step 7: Click 'Send'"+
+                "Once you have filled in all the required information, click the 'Send' button to submit your request."+
+                "</p>"
+            if(!lang){
+                document.getElementById('modalcontent').innerHTML=en
+            }
+            else{
+                document.getElementById('modalcontent').innerHTML=sp
+            }
+            lang =!lang;
+        }
+    </script>
+    <br/>
+    <span>Do you want to know how to us it?</span><br/>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#instructionsModal">
+        Click here...
+    </button>
+      
+    
+    <div class="modal fade" id="instructionsModal" tabindex="-1" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="instructionsModalLabel">Instructions</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <button onclick="langChange()" type="button" class="btn btn-primary">Switch instructions to spanish</button><br/>
+                <div id="modalcontent">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
     <br/>
     <i style="color:red">* are important</i>
     <form method="post" action="iaresult"> {% csrf_token %}
         <label for="ammount" class="form-label">
             Ammount : 
         </label>
-        <input name="ammount" value="{{ prompt_values.ammount }}" type="number" class="form-control" required/>
+        <input name="ammount" value="{{ prompt_values.ammount }}" type="number" class="form-control" required placeholder="$100000"/><span style="color:red">(*)</span>
         <br/>        
         <label for="language" class="form-label">
             Response in Spanish : 

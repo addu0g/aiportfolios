@@ -39,7 +39,7 @@ def iaquery(request):
     language = "English"
     if "language" in request.POST:
         language = "Spanish"
-    role = "Act as Warren Buffet, Act as Peter Lynch, Act as Stanley Druckenmiller, Act as Ray Dalio"
+    role = "Act as Warren Buffet, Act as Peter Lynch, Act as Stanley Druckenmiller, Act as Wilbur Ed Bosarge, Act as Jr. Bruce Eames"
     goal = f"Generate a portfolio for a person in its {age} who is looking a risk tolerance: {risk}, and with an investment horizon of {horizon} this investment will be to {objective}" 
     restrictions = "Use simple language, write in a formal tone"
     format = f"""Create the response in language: {language}, Answer with bullet points, 
